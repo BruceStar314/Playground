@@ -1,9 +1,9 @@
 import { createRoot } from "react-dom/client";
 import "./CSS/index.css";
-import Canvas from "./react/Canvas.jsx";
+import App from "./App.jsx";
 
 createRoot(document.getElementById("root")).render(
   <>
-    <Canvas/>
-  </>,
+    <App/>
+  </>
 )
