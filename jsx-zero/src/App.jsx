@@ -1,18 +1,15 @@
-import NavBar from "./react/NavBar.jsx";
-import ButtonArea from "./react/ButtonArea.jsx";
-import Hero from "./react/Hero.jsx";
-import Footer from "./react/Footer.jsx";
-const App = () => {
+
+
+function App() {
+    const colors = ["red", "green", "blue"];
+
+const brighter = colors.map(color => color + "light")
+console.log(brighter); // ["red light", "green light", "blue light"]
+
     return (
-        <div className="flex justify-center items-center h-screen w-screen">
-            <div className="h-[80vh] w-[22vw] bg-[hsl(0,0%,100%)]">
-                <NavBar/>
-                <ButtonArea/>
-                <Hero/>
-                <Footer/>
-            </div>
-        </div>
+       console.log(brighter)
     )
-}
+    
+}   
 
 export default App
