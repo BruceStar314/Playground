@@ -1,15 +1,33 @@
+// This component lets you add and remove colors from a list
+import { useState } from "react"
 
+export default function ColorManager() {
+  const [colors, setColors] = useState([
+    { id: 1, name: "Red" },
+    { id: 2, name: "Blue" },
+    { id: 3, name: "Green" }
+  ])
 
-function App() {
-    const colors = ["red", "green", "blue"];
+  const addColor = (newColor) => {
+    setColors([...colors, { id: colors.length + 1, name: newColor }])
+  }
 
-const brighter = colors.map(color => color + "light")
-console.log(brighter); // ["red light", "green light", "blue light"]
+  const removeColor = (id) => {
+    setColors(colors.filter(color => color.id !== id))
+  }
 
-    return (
-       console.log(brighter)
-    )
-    
-}   
-
-export default App
+  return (
+    <div>
+      <h2>Colors</h2>
+      <ul>
+        {colors.map((color) => (
+          <li key={color.id}>
+            {color.name} 
+            <button onClick={() => removeColor(color.id)}>Remove</button>
+          </li>
+        ))}
+      </ul>
+      <button onClick={() => addColor("Yellow")}>Add Yellow</button>
+    </div>
+  )
+}
