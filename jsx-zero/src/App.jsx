@@ -1,4 +1,5 @@
 // This component lets you add and remove colors from a list
+// I did this on Arch Linux ARM and it was a pain in my ass!
 import { useState } from "react"
 
 export default function ColorManager() {
